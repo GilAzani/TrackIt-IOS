@@ -9,8 +9,7 @@ import UIKit
 
 class SimpleMovieCell: UITableViewCell {
 
-    @IBOutlet weak var movieNameLabel: UIView!
     
-    @IBOutlet weak var movieImageView: UIView!
-    
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var movieImageView: UIImageView!
 }

@@ -102,7 +102,7 @@
                                 <rect key="frame" x="0.0" y="408.33333333333326" width="393" height="360.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="HG0-4i-Wwu" customClass="SimpleMovieCell" customModule="TrackIt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="favorite_movie_id" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favorite_movie_id" rowHeight="50" id="HG0-4i-Wwu" customClass="SimpleMovieCell" customModule="TrackIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HG0-4i-Wwu" id="Jjn-bn-fkd">
@@ -116,20 +116,24 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popcorn.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EID-0U-FbG">
-                                                    <rect key="frame" x="354.66666666666669" y="-1" width="18.333333333333314" height="52.666666666666664"/>
+                                                    <rect key="frame" x="293" y="-1" width="100" height="52.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="60J-fw-dXw"/>
+                                                        <constraint firstAttribute="height" constant="100" id="Iry-eR-hgM"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="EID-0U-FbG" secondAttribute="trailing" constant="20" id="10N-yx-yXa"/>
                                                 <constraint firstItem="XiN-Xo-BOI" firstAttribute="leading" secondItem="Jjn-bn-fkd" secondAttribute="leading" constant="37" id="OSc-es-TXe"/>
+                                                <constraint firstAttribute="trailing" secondItem="EID-0U-FbG" secondAttribute="trailing" id="Wr2-lO-50S"/>
                                                 <constraint firstItem="XiN-Xo-BOI" firstAttribute="centerY" secondItem="Jjn-bn-fkd" secondAttribute="centerY" id="YiA-De-Mua"/>
                                                 <constraint firstItem="EID-0U-FbG" firstAttribute="top" secondItem="Jjn-bn-fkd" secondAttribute="top" id="mBn-RQ-nAm"/>
                                                 <constraint firstAttribute="bottom" secondItem="EID-0U-FbG" secondAttribute="bottom" id="v4z-yI-L6h"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="movieImageView" destination="Jjn-bn-fkd" id="F79-9I-s30"/>
-                                            <outlet property="movieNameLabel" destination="Jjn-bn-fkd" id="Icw-TB-Bwe"/>
+                                            <outlet property="movieImageView" destination="EID-0U-FbG" id="74U-FT-lUN"/>
+                                            <outlet property="movieNameLabel" destination="XiN-Xo-BOI" id="QJg-na-I79"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
