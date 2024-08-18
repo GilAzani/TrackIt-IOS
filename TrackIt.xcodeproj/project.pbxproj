@@ -16,6 +16,9 @@
 		FC7D7FEB2C71FE2200818A02 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D7FEA2C71FE2200818A02 /* ProfileViewController.swift */; };
 		FC7D7FED2C7200A600818A02 /* SimpleMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */; };
 		FCA300B82C7210490042CC69 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300B72C7210490042CC69 /* Movie.swift */; };
+		FCA300BB2C7215190042CC69 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = FCA300BA2C7215190042CC69 /* AlamofireImage */; };
+		FCA300BD2C7218550042CC69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BC2C7218550042CC69 /* User.swift */; };
+		FCA300BF2C7218B30042CC69 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BE2C7218B30042CC69 /* MovieListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,8 @@
 		FC7D7FEA2C71FE2200818A02 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMovieCell.swift; sourceTree = "<group>"; };
 		FCA300B72C7210490042CC69 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FCA300BC2C7218550042CC69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FCA300BE2C7218B30042CC69 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA300BB2C7215190042CC69 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,8 @@
 				FC1C0C972C70DA990091BC59 /* Info.plist */,
 				FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */,
 				FCA300B72C7210490042CC69 /* Movie.swift */,
+				FCA300BC2C7218550042CC69 /* User.swift */,
+				FCA300BE2C7218B30042CC69 /* MovieListItem.swift */,
 			);
 			path = TrackIt;
 			sourceTree = "<group>";
@@ -92,6 +100,9 @@
 			dependencies = (
 			);
 			name = TrackIt;
+			packageProductDependencies = (
+				FCA300BA2C7215190042CC69 /* AlamofireImage */,
+			);
 			productName = TrackIt;
 			productReference = FC1C0C862C70DA980091BC59 /* TrackIt.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +131,9 @@
 				Base,
 			);
 			mainGroup = FC1C0C7D2C70DA980091BC59;
+			packageReferences = (
+				FCA300B92C7215190042CC69 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = FC1C0C872C70DA980091BC59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -148,11 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1C0C8E2C70DA980091BC59 /* ViewController.swift in Sources */,
+				FCA300BF2C7218B30042CC69 /* MovieListItem.swift in Sources */,
 				FC1C0C8A2C70DA980091BC59 /* AppDelegate.swift in Sources */,
 				FCA300B82C7210490042CC69 /* Movie.swift in Sources */,
 				FC7D7FEB2C71FE2200818A02 /* ProfileViewController.swift in Sources */,
 				FC7D7FED2C7200A600818A02 /* SimpleMovieCell.swift in Sources */,
 				FC1C0C8C2C70DA980091BC59 /* SceneDelegate.swift in Sources */,
+				FCA300BD2C7218550042CC69 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCA300B92C7215190042CC69 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCA300BA2C7215190042CC69 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCA300B92C7215190042CC69 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC1C0C7E2C70DA980091BC59 /* Project object */;
 }

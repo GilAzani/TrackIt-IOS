@@ -22,4 +22,11 @@ class Movie{
         self.runtime = runtime
     }
     
+    enum CodingKeys: String, CodingKey{
+        case titles
+        case releaseDate = "release_date"
+        case overview
+        case imageURL = "poster_path"
+        case runtime
+    }
 }
