@@ -62,7 +62,7 @@
         <!--profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrackIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="TrackIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,6 +101,38 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EJf-8F-UeX">
                                 <rect key="frame" x="0.0" y="408.33333333333326" width="393" height="360.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="HG0-4i-Wwu" customClass="SimpleMovieCell" customModule="TrackIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HG0-4i-Wwu" id="Jjn-bn-fkd">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-Xo-BOI">
+                                                    <rect key="frame" x="37" y="14.999999999999998" width="53" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popcorn.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EID-0U-FbG">
+                                                    <rect key="frame" x="354.66666666666669" y="-1" width="18.333333333333314" height="52.666666666666664"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="EID-0U-FbG" secondAttribute="trailing" constant="20" id="10N-yx-yXa"/>
+                                                <constraint firstItem="XiN-Xo-BOI" firstAttribute="leading" secondItem="Jjn-bn-fkd" secondAttribute="leading" constant="37" id="OSc-es-TXe"/>
+                                                <constraint firstItem="XiN-Xo-BOI" firstAttribute="centerY" secondItem="Jjn-bn-fkd" secondAttribute="centerY" id="YiA-De-Mua"/>
+                                                <constraint firstItem="EID-0U-FbG" firstAttribute="top" secondItem="Jjn-bn-fkd" secondAttribute="top" id="mBn-RQ-nAm"/>
+                                                <constraint firstAttribute="bottom" secondItem="EID-0U-FbG" secondAttribute="bottom" id="v4z-yI-L6h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieImageView" destination="Jjn-bn-fkd" id="F79-9I-s30"/>
+                                            <outlet property="movieNameLabel" destination="Jjn-bn-fkd" id="Icw-TB-Bwe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -123,6 +155,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="profile" image="person.crop.circle" catalog="system" id="kxh-qy-p00"/>
+                    <connections>
+                        <outlet property="favoriteMoviesTableView" destination="EJf-8F-UeX" id="4IP-hJ-9Ra"/>
+                        <outlet property="numberOfMoviesLabel" destination="oBy-R0-20b" id="U2W-5J-Bk5"/>
+                        <outlet property="userImageView" destination="Weu-Oy-WBx" id="rXP-kF-Nkw"/>
+                        <outlet property="usernameLabel" destination="jpD-qB-rlI" id="Azq-2b-TbD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,6 +171,7 @@
         <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="popcorn" catalog="system" width="102" height="128"/>
+        <image name="popcorn.fill" catalog="system" width="102" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

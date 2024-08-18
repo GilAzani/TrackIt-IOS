@@ -13,6 +13,8 @@
 		FC1C0C912C70DA980091BC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1C0C8F2C70DA980091BC59 /* Main.storyboard */; };
 		FC1C0C932C70DA990091BC59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1C0C922C70DA990091BC59 /* Assets.xcassets */; };
 		FC1C0C962C70DA990091BC59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1C0C942C70DA990091BC59 /* LaunchScreen.storyboard */; };
+		FC7D7FEB2C71FE2200818A02 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D7FEA2C71FE2200818A02 /* ProfileViewController.swift */; };
+		FC7D7FED2C7200A600818A02 /* SimpleMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FC1C0C922C70DA990091BC59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC1C0C952C70DA990091BC59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1C0C972C70DA990091BC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC7D7FEA2C71FE2200818A02 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		FC1C0C882C70DA980091BC59 /* TrackIt */ = {
 			isa = PBXGroup;
 			children = (
+				FC7D7FEA2C71FE2200818A02 /* ProfileViewController.swift */,
 				FC1C0C892C70DA980091BC59 /* AppDelegate.swift */,
 				FC1C0C8B2C70DA980091BC59 /* SceneDelegate.swift */,
 				FC1C0C8D2C70DA980091BC59 /* ViewController.swift */,
@@ -63,6 +68,7 @@
 				FC1C0C922C70DA990091BC59 /* Assets.xcassets */,
 				FC1C0C942C70DA990091BC59 /* LaunchScreen.storyboard */,
 				FC1C0C972C70DA990091BC59 /* Info.plist */,
+				FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */,
 			);
 			path = TrackIt;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			files = (
 				FC1C0C8E2C70DA980091BC59 /* ViewController.swift in Sources */,
 				FC1C0C8A2C70DA980091BC59 /* AppDelegate.swift in Sources */,
+				FC7D7FEB2C71FE2200818A02 /* ProfileViewController.swift in Sources */,
+				FC7D7FED2C7200A600818A02 /* SimpleMovieCell.swift in Sources */,
 				FC1C0C8C2C70DA980091BC59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
