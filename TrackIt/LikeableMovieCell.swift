@@ -9,5 +9,7 @@ import Foundation
 import UIKit
 
 class LikeableMovieCell: UITableViewCell{
+    @IBOutlet weak var movieNameLabel: UILabel!
     
+    @IBOutlet weak var likeImageView: UIImageView!
 }

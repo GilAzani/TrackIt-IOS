@@ -8,13 +8,15 @@
 import Foundation
 
 class Movie{
+    var id: Int
     var title: String
     var releaseDate: String
     var overview: String
     var imageURL: String
     var runtime: Int //duration in minutes
     
-    init(title: String, releaseDate: String, overview: String, imageURL: String, runtime: Int) {
+    init(id: Int, title: String, releaseDate: String, overview: String, imageURL: String, runtime: Int) {
+        self.id = id
         self.title = title
         self.releaseDate = releaseDate
         self.overview = overview
@@ -23,7 +25,8 @@ class Movie{
     }
     
     enum CodingKeys: String, CodingKey{
-        case titles
+        case id
+        case title
         case releaseDate = "release_date"
         case overview
         case imageURL = "poster_path"

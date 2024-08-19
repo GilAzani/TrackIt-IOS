@@ -36,25 +36,38 @@
                                 <rect key="frame" x="0.0" y="104" width="393" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Sxy-M1-ZdW" customClass="LikeableMovieCell" customModule="TrackIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movie_cell_id" id="Sxy-M1-ZdW" customClass="LikeableMovieCell" customModule="TrackIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="21.666666030883789"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sxy-M1-ZdW" id="ir0-27-b45">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="21.666666030883789"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWt-CW-r6l">
-                                                    <rect key="frame" x="37" y="11.333333333333336" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWt-CW-r6l">
+                                                    <rect key="frame" x="37" y="0.66666666666666607" width="57.666666666666657" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="35Z-Bv-8xo">
+                                                    <rect key="frame" x="343" y="-0.33333333333333215" width="50" height="21.666666666666668"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="9Us-NR-glG"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NWt-CW-r6l" firstAttribute="leading" secondItem="ir0-27-b45" secondAttribute="leading" constant="37" id="3N2-25-zRp"/>
+                                                <constraint firstAttribute="bottom" secondItem="35Z-Bv-8xo" secondAttribute="bottom" id="DyK-B7-gwX"/>
+                                                <constraint firstAttribute="trailing" secondItem="35Z-Bv-8xo" secondAttribute="trailing" id="Eo0-e0-4tH"/>
                                                 <constraint firstItem="NWt-CW-r6l" firstAttribute="centerY" secondItem="ir0-27-b45" secondAttribute="centerY" id="WEa-ev-dJE"/>
+                                                <constraint firstItem="35Z-Bv-8xo" firstAttribute="top" secondItem="ir0-27-b45" secondAttribute="top" id="sIc-nm-vRw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="likeImageView" destination="35Z-Bv-8xo" id="krf-Uq-Cig"/>
+                                            <outlet property="movieNameLabel" destination="NWt-CW-r6l" id="UHn-Uv-qoP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -75,6 +88,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="movies" image="popcorn" catalog="system" id="OKY-Dh-Zgi"/>
+                    <connections>
+                        <outlet property="moviesTableView" destination="KY2-nA-9T9" id="VKu-ut-IvN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Td-x0-U3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,6 +244,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="popcorn" catalog="system" width="102" height="128"/>
