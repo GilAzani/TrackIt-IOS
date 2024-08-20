@@ -27,11 +27,7 @@ class DetailedMovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        // TODO later remove the dummy movie
-        movie = Movie(id: 2, title: "gil", releaseDate: "2019", overview: "gil dfs dsf sd sd fsd sdf sf s dfs fsd ", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100)
-        isAdded = true
-        
+                
         setUpUi()
     }
     func setUpUi(){

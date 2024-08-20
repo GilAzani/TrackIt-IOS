@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
             movieTableView.reloadData()
         }else{
             // TODO get list by text from data manager -> api
-            searchResult = [Movie(id: 1, title: searchMovieTextFeild.text ?? "bug", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), Movie(id: 2, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100)]
+            searchResult = [Movie(id: 1, title: searchMovieTextFeild.text ?? "bug", releaseDate: "2019", overview: "test", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), Movie(id: 2, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100)]
             movieTableView.reloadData()
         }
     }
