@@ -29,9 +29,11 @@ class SearchViewController: UIViewController {
             searchResult = []
             movieTableView.reloadData()
         }else{
-            // TODO get list by text from data manager -> api
-            searchResult = [Movie(id: 1, title: searchMovieTextFeild.text ?? "bug", releaseDate: "2019", overview: "test", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), Movie(id: 2, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100)]
-            movieTableView.reloadData()
+            DataManager.instance.searchMoviesByTitle(title: searchMovieTextFeild.text!){
+                list in
+                self.searchResult = list
+                self.movieTableView.reloadData()
+            }
         }
     }
     
@@ -68,9 +70,10 @@ extension SearchViewController: UITableViewDataSource{
 
         let movie: Movie = searchResult[indexPath.row]
 
-        let imageURL = URL(string: movie.imageURL)!
+        let imageURL = URL(string: movie.imageURL.isEmpty ? "https://" : movie.imageURL)!
 
-        cell?.movieImageView.af.setImage(withURL: imageURL, placeholderImage: #imageLiteral(resourceName: "default_movie_icon")) //add default image
+        cell?.movieImageView.af.setImage(withURL: imageURL, placeholderImage: #imageLiteral(resourceName: "default_movie_icon"))
+
                 
         cell?.movieNameLabel.text = movie.title
         return cell!
