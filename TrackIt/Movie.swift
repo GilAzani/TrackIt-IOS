@@ -32,4 +32,15 @@ class Movie{
         case imageURL = "poster_path"
         case runtime
     }
+    
+    func getPrettyTimeString() -> String{
+        let hours = runtime / 60
+        let minutes = runtime % 60
+        var result = "\(runtime) minutes"
+        
+        if hours > 0{
+            result += " - \(hours)h \(minutes)m"
+        }
+        return result
+    }
 }

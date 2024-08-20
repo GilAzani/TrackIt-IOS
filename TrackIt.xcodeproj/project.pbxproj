@@ -21,6 +21,7 @@
 		FCA300BB2C7215190042CC69 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = FCA300BA2C7215190042CC69 /* AlamofireImage */; };
 		FCA300BD2C7218550042CC69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BC2C7218550042CC69 /* User.swift */; };
 		FCA300BF2C7218B30042CC69 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BE2C7218B30042CC69 /* MovieListItem.swift */; };
+		FCABE3592C74BFCB00F94DB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FCA300B72C7210490042CC69 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FCA300BC2C7218550042CC69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCA300BE2C7218B30042CC69 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
+		FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				FCA300BE2C7218B30042CC69 /* MovieListItem.swift */,
 				FC262A352C73646000288FED /* MyMoviesViewController.swift */,
 				FC262A372C73662900288FED /* LikeableMovieCell.swift */,
+				FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */,
 			);
 			path = TrackIt;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1C0C8E2C70DA980091BC59 /* ViewController.swift in Sources */,
+				FCABE3592C74BFCB00F94DB7 /* SearchViewController.swift in Sources */,
 				FCA300BF2C7218B30042CC69 /* MovieListItem.swift in Sources */,
 				FC1C0C8A2C70DA980091BC59 /* AppDelegate.swift in Sources */,
 				FCA300B82C7210490042CC69 /* Movie.swift in Sources */,

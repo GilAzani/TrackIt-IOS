@@ -92,6 +92,8 @@ extension MyMoviesViewController: UITableViewDataSource {
             movieList[indexInMovieList] = updatedMovieItem
         }
         
+        // use data manager to update movie list
+        
         // Update displayList
         displayList[indexPath.row] = updatedMovieItem
         
