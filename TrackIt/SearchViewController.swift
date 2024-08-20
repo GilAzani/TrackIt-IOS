@@ -11,11 +11,13 @@ import UIKit
 
 class SearchViewController: UIViewController {
     let searchMovieCellId = "search_movie_cell"
+    let showDetailedMovieSegueId = "show_movie_details"
     
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var searchMovieTextFeild: UITextField!
     
     var searchResult: [Movie] = []
+    var selectedMovie: Movie!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,6 +35,15 @@ class SearchViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showDetailedMovieSegueId{
+            // TODO get movie state from data manager - not/is in the list
+            let detailedMovie = segue.destination as! DetailedMovieViewController
+            detailedMovie.isAdded = true
+            detailedMovie.movie = selectedMovie
+        }
+    }
+    
     func setUpList(){
         movieTableView.dataSource = self
         movieTableView.delegate = self
@@ -40,6 +51,10 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedMovie = searchResult[indexPath.row]
+        performSegue(withIdentifier: showDetailedMovieSegueId, sender: self)
+    }
     
 }
 

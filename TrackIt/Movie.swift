@@ -43,4 +43,9 @@ class Movie{
         }
         return result
     }
+    
+    func getReleaseYear() -> String{
+        let year = String(releaseDate.prefix(4))
+        return "year: \(year)"
+    }
 }
