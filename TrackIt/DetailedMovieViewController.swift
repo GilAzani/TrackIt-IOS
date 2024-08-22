@@ -32,7 +32,7 @@ class DetailedMovieViewController: UIViewController {
     }
     func setUpUi(){
         movieTitleLabel.text = movie.title
-        let imageURL = URL(string: movie.imageURL)!
+        let imageURL = URL(string: movie.imageURL.isEmpty ? "https://" : movie.imageURL)!
         moviePosterImageView.af.setImage(withURL: imageURL, placeholderImage: #imageLiteral(resourceName: "default_movie_icon"))
         
         updateImage()
@@ -43,9 +43,17 @@ class DetailedMovieViewController: UIViewController {
     }
     @IBAction func addOrRemoveMovieClicked(_ sender: UITapGestureRecognizer) {
         isAdded.toggle()
+        modifyMovieList()
         updateImage()
         
         // TODO here update movies list accordinally
+    }
+    func modifyMovieList(){
+        if isAdded{
+            DataManager.instance.addMovie(movie: movie)
+        }else{
+            DataManager.instance.removeMovie(movie: movie)
+        }
     }
     
     func updateImage(){
