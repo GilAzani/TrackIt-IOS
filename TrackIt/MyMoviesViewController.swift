@@ -13,6 +13,8 @@ class MyMoviesViewController: UIViewController {
     var movieList: [MovieListItem] = []
     var displayList: [MovieListItem] = []
     var showLiked: Bool = false
+    var selectedMovie: Movie!
+    let showDetailedMovieSegueId = "show_movie_details"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,15 @@ class MyMoviesViewController: UIViewController {
         moviesTableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showDetailedMovieSegueId{
+            // TODO get movie state from data manager - not/is in the list
+            let detailedMovie = segue.destination as! DetailedMovieViewController
+            detailedMovie.isAdded = DataManager.instance.isMovieInList(movie: selectedMovie)
+            detailedMovie.movie = selectedMovie
+        }
+    }
+    
     @IBAction func showAllMovies(_ sender: Any) {
         // Update displayList to show all movies
         displayList = movieList
@@ -58,7 +69,10 @@ class MyMoviesViewController: UIViewController {
 }
 
 extension MyMoviesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedMovie = displayList[indexPath.row].movie
+        performSegue(withIdentifier: showDetailedMovieSegueId, sender: self)
+    }
 }
 
 extension MyMoviesViewController: UITableViewDataSource {

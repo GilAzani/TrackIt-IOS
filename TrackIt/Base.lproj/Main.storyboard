@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--movies-->
+        <!--My Movies View Controller-->
         <scene sceneID="RUa-Lz-aCA">
             <objects>
                 <viewController id="6Fk-lw-a3O" customClass="MyMoviesViewController" customModule="TrackIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clT-tH-H4c">
-                                <rect key="frame" x="0.0" y="59" width="196.66666666666666" height="35"/>
+                                <rect key="frame" x="0.0" y="103" width="196.66666666666666" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="All Movies"/>
                                 <connections>
@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvl-Bi-mEf">
-                                <rect key="frame" x="196.66666666666663" y="59" width="196.33333333333337" height="34.333333333333343"/>
+                                <rect key="frame" x="196.66666666666663" y="103" width="196.33333333333337" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Favorites"/>
                                 <connections>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KY2-nA-9T9">
-                                <rect key="frame" x="0.0" y="104" width="393" height="665"/>
+                                <rect key="frame" x="0.0" y="148" width="393" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movie_cell_id" id="Sxy-M1-ZdW" customClass="LikeableMovieCell" customModule="TrackIt" customModuleProvider="target">
@@ -99,14 +99,15 @@
                             <constraint firstItem="clT-tH-H4c" firstAttribute="top" secondItem="UNe-z2-JPv" secondAttribute="top" id="pOD-Lq-nUv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="movies" image="popcorn" catalog="system" id="OKY-Dh-Zgi"/>
+                    <navigationItem key="navigationItem" id="bbl-qD-6vQ"/>
                     <connections>
                         <outlet property="moviesTableView" destination="KY2-nA-9T9" id="VKu-ut-IvN"/>
+                        <segue destination="uhB-WN-GmA" kind="show" identifier="show_movie_details" id="Cyn-Mb-puF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Td-x0-U3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-344.27480916030532" y="459.85915492957747"/>
+            <point key="canvasLocation" x="1988.5496183206105" y="5.6338028169014089"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="5O7-zg-2zK">
@@ -338,7 +339,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="yop-HB-8Hs" kind="relationship" relationship="viewControllers" id="WzF-9p-PG0"/>
-                        <segue destination="6Fk-lw-a3O" kind="relationship" relationship="viewControllers" id="ID4-Od-tAt"/>
+                        <segue destination="APV-n5-yLL" kind="relationship" relationship="viewControllers" id="ID4-Od-tAt"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="S23-kL-ufN"/>
                     </connections>
                 </tabBarController>
@@ -457,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-23"/>
+            <point key="canvasLocation" x="-170" y="633"/>
         </scene>
         <!--search-->
         <scene sceneID="kfz-FC-loz">
@@ -478,7 +479,29 @@
             </objects>
             <point key="canvasLocation" x="-443.51145038167937" y="-823.23943661971839"/>
         </scene>
+        <!--movies-->
+        <scene sceneID="Lp4-R0-F4o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="APV-n5-yLL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="movies" image="popcorn" catalog="system" id="OKY-Dh-Zgi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ufK-I5-zGS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Fk-lw-a3O" kind="relationship" relationship="rootViewController" id="2Fh-Ti-uee"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfl-pV-Var" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.8320610687022" y="5.6338028169014089"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cyn-Mb-puF"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
