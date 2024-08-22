@@ -2,10 +2,12 @@
 //  AppDelegate.swift
 //  TrackIt
 //
-//  Created by Student11 on 17/08/2024.
+//  Created by Student11 on s17/08/2024.
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
