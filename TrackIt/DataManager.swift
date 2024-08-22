@@ -14,17 +14,28 @@ class DataManager{
     var movieList: [MovieListItem] = []
     let MOVIES_API_URL = "https://moviedatabase8.p.rapidapi.com/Search"
     
-    // TODO load api key from .env to here
-    let API_KEY = ""
+    // Computed property for API_KEY
+    private var API_KEY: String {
+        guard let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
+              let config = NSDictionary(contentsOfFile: path),
+              let apiKey = config["API_KEY"] as? String else {
+            fatalError("API_KEY not found in Config.plist")
+        }
+        return apiKey
+    }
+
+
+    // Computed property for headers
+    private var headers: HTTPHeaders {
+        return [
+            "x-rapidapi-key": API_KEY,
+            "x-rapidapi-host": "moviedatabase8.p.rapidapi.com"
+        ]
+    }
     
-    // TODO move to .env like file
-    let headers: HTTPHeaders =  [
-        "x-rapidapi-key": "API_KEY,",
-        "x-rapidapi-host": "moviedatabase8.p.rapidapi.com"
-    ]
-    
-    private init(){
-        // TODO fetch user movies
+    private init() {
+        // TODO: Fetch user movies
+        print(API_KEY)
     }
     
     func isMovieInList(movie: Movie) -> Bool{
