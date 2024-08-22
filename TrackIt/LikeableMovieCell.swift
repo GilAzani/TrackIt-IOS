@@ -11,5 +11,6 @@ import UIKit
 class LikeableMovieCell: UITableViewCell{
     @IBOutlet weak var movieNameLabel: UILabel!
     
+    @IBOutlet weak var moviePosterImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
 }

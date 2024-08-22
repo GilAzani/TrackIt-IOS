@@ -32,9 +32,7 @@ class MyMoviesViewController: UIViewController {
     }
     
     func initList(){
-        // later get the list from db/other vies - decide later
-        movieList = [MovieListItem(movie: Movie(id: 1, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), isLiked: true), MovieListItem(movie: Movie(id: 2, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), isLiked: false)]
-        
+        movieList = DataManager.instance.movieList
         
     }
     
@@ -65,6 +63,10 @@ extension MyMoviesViewController: UITableViewDataSource {
         let movieItem = displayList[indexPath.row]
         cell.movieNameLabel.text = movieItem.movie.title
         
+        
+        let posterImageURL = URL(string: movieItem.movie.imageURL.isEmpty ? "https://" : movieItem.movie.imageURL)!
+
+        cell.moviePosterImageView.af.setImage(withURL: posterImageURL, placeholderImage: #imageLiteral(resourceName: "default_movie_icon"))
         // Configure the initial image
         updateLikeImageView(for: cell, at: indexPath)
         
@@ -84,6 +86,7 @@ extension MyMoviesViewController: UITableViewDataSource {
         let indexPath = IndexPath(row: tappedImageView.tag, section: 0)
         
         let movieItem = displayList[indexPath.row]
+        
         var updatedMovieItem = movieItem
         updatedMovieItem.isLiked.toggle()
         
@@ -91,9 +94,7 @@ extension MyMoviesViewController: UITableViewDataSource {
         if let indexInMovieList = movieList.firstIndex(where: { $0.movie.id == movieItem.movie.id }) {
             movieList[indexInMovieList] = updatedMovieItem
         }
-        
-        // TODO use data manager to update movie list
-        
+                
         // Update displayList
         displayList[indexPath.row] = updatedMovieItem
         
@@ -101,6 +102,7 @@ extension MyMoviesViewController: UITableViewDataSource {
         if let cell = moviesTableView.cellForRow(at: indexPath) as? LikeableMovieCell {
             updateLikeImageView(for: cell, at: indexPath)
         }
+    
         
         moviesTableView.reloadData()
     }

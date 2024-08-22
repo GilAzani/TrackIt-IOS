@@ -42,6 +42,7 @@ class DataManager{
         return movieList.contains(where: { $0.movie.id == movie.id })
     }
     
+    
     func addMovie(movie: Movie){
         if isMovieInList(movie: movie){
             return
