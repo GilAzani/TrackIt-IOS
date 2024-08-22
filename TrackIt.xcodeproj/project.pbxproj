@@ -19,7 +19,7 @@
 		FC7D7FED2C7200A600818A02 /* SimpleMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */; };
 		FC7E74112C74DA35006BAD63 /* DetailedMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E74102C74DA35006BAD63 /* DetailedMovieViewController.swift */; };
 		FC8E218E2C74EDB600B8F484 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8E218D2C74EDB600B8F484 /* DataManager.swift */; };
-		FC9B2E1E2C774512002C59C2 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC9B2E1D2C774512002C59C2 /* Config.plist */; };
+		FC9B2E202C7746A5002C59C2 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC9B2E1F2C7746A5002C59C2 /* Config.plist */; };
 		FCA300B82C7210490042CC69 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300B72C7210490042CC69 /* Movie.swift */; };
 		FCA300BB2C7215190042CC69 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = FCA300BA2C7215190042CC69 /* AlamofireImage */; };
 		FCA300BD2C7218550042CC69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BC2C7218550042CC69 /* User.swift */; };
@@ -42,7 +42,7 @@
 		FC7D7FEC2C7200A600818A02 /* SimpleMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMovieCell.swift; sourceTree = "<group>"; };
 		FC7E74102C74DA35006BAD63 /* DetailedMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMovieViewController.swift; sourceTree = "<group>"; };
 		FC8E218D2C74EDB600B8F484 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FC9B2E1D2C774512002C59C2 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		FC9B2E1F2C7746A5002C59C2 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		FCA300B72C7210490042CC69 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FCA300BC2C7218550042CC69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCA300BE2C7218B30042CC69 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */,
 				FC7E74102C74DA35006BAD63 /* DetailedMovieViewController.swift */,
 				FC8E218D2C74EDB600B8F484 /* DataManager.swift */,
-				FC9B2E1D2C774512002C59C2 /* Config.plist */,
+				FC9B2E1F2C7746A5002C59C2 /* Config.plist */,
 			);
 			path = TrackIt;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC9B2E1E2C774512002C59C2 /* Config.plist in Resources */,
+				FC9B2E202C7746A5002C59C2 /* Config.plist in Resources */,
 				FC1C0C962C70DA990091BC59 /* LaunchScreen.storyboard in Resources */,
 				FC1C0C932C70DA990091BC59 /* Assets.xcassets in Resources */,
 				FC1C0C912C70DA980091BC59 /* Main.storyboard in Resources */,
