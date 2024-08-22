@@ -14,6 +14,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var favoriteMoviesTableView: UITableView!
     @IBOutlet weak var numberOfMoviesLabel: UILabel!
     
+    @IBOutlet weak var favoriteMoviesLabel: UILabel!
+    let movieListLabel = "Favorite Movies List:"
+    
     let movieCellId = "favorite_movie_id"
     
     var userData: User!
@@ -40,6 +43,11 @@ class ProfileViewController: UIViewController {
         // add a placeholder image later
         userImageView.af.setImage(withURL: imageURL)
         usernameLabel.text = userData.username
+
+        refreshMovieCount()
+    }
+    
+    func refreshMovieCount(){
         
         let movieCount = userData.movieList.count
         if movieCount == 1{
@@ -48,10 +56,28 @@ class ProfileViewController: UIViewController {
             numberOfMoviesLabel.text = "\(movieCount) movies"
         }
     }
+    
+    func refreshMovieLabel(){
+        let favoriteMovies = userData.movieList.filter {$0.isLiked}
+        if favoriteMovies.isEmpty{
+            favoriteMoviesLabel.text = ""
+        }else{
+            favoriteMoviesLabel.text = movieListLabel
+        }
+    }
 
     func loadUserData(){
         // later getting the data from datamanager
-        self.userData = User(username: "gil", userImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&s", movieList: [MovieListItem(movie: Movie(id: 1, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), isLiked: true), MovieListItem(movie: Movie(id: 1, title: "gil", releaseDate: "2019", overview: "gil", imageURL: "https://image.tmdb.org/t/p/original//zvwBd0nsW5OqTs4ndEJLQY62leF.jpg", runtime: 100), isLiked: true)] )
+        self.userData = User(username: "gil", userImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&s", movieList:DataManager.instance.movieList )
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        userData.movieList = DataManager.instance.movieList
+        favoriteMoviesTableView.reloadData()
+        refreshMovieCount()
+        refreshMovieLabel()
     }
 
 }
@@ -76,7 +102,7 @@ extension ProfileViewController: UITableViewDataSource{
         let favoriteMovies = userData.movieList.filter {$0.isLiked}
         let movie: Movie = favoriteMovies[indexPath.row].movie
 
-        let imageURL = URL(string: movie.imageURL)!
+        let imageURL = URL(string: movie.imageURL.isEmpty ? "https://" : movie.imageURL)!
 
         cell?.movieImageView.af.setImage(withURL: imageURL, placeholderImage: #imageLiteral(resourceName: "default_movie_icon")) //add default image
                 

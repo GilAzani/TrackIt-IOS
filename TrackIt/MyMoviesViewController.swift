@@ -36,6 +36,15 @@ class MyMoviesViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initList()
+        
+        displayList = movieList
+        moviesTableView.reloadData()
+    }
+    
     @IBAction func showAllMovies(_ sender: Any) {
         // Update displayList to show all movies
         displayList = movieList

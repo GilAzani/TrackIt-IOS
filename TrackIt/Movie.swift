@@ -49,6 +49,12 @@ class Movie: Codable {
     }
     
     func getReleaseYear() -> String {
+        // Check if releaseDate is empty
+        guard !releaseDate.isEmpty else {
+            return ""
+        }
+        
+        // Extract the year from releaseDate
         let year = String(releaseDate.prefix(4))
         return "year: \(year)"
     }
