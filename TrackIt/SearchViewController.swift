@@ -29,14 +29,14 @@ class SearchViewController: UIViewController {
             searchResult = []
             movieTableView.reloadData()
         }else{
-            self.searchResult = [Movie(id: 634649, title: "spider-man: no way  home for sure for sure 1", overview: "a logng text", runtime: 100), Movie(id: 634648, title: "spider-man: no way  home for sure for sure 2", overview: "a logng text", runtime: 100)]
-            self.movieTableView.reloadData()
+//            self.searchResult = [Movie(id: 634649, title: "spider-man: no way  home for sure for sure 1", overview: "a logng text", runtime: 100), Movie(id: 634648, title: "spider-man: no way  home for sure for sure 2", overview: "a logng text", runtime: 100)]
+//            self.movieTableView.reloadData()
             // TODO: when done delete the hard coded part and uncomment datamanager
-//            DataManager.instance.searchMoviesByTitle(title: searchMovieTextFeild.text!){
-//                list in
-//                self.searchResult = list
-//                self.movieTableView.reloadData()
-//            }
+            DataManager.instance.searchMoviesByTitle(title: searchMovieTextFeild.text!){
+                list in
+                self.searchResult = list
+                self.movieTableView.reloadData()
+            }
         }
     }
     

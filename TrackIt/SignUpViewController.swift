@@ -14,6 +14,7 @@ import FirebaseDatabase
 class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     
+    @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     let signUpId = "sign_up"
@@ -27,14 +28,14 @@ class SignUpViewController: UIViewController {
               let password = passwordTextField.text, !password.isEmpty,
               let username = usernameTextField.text, !username.isEmpty else {
             // Handle empty fields
-            print("Email, Password, or Username is empty.")
+            errorMessageLabel.text = "Email, Password, or Username is empty."
             return
         }
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 // Handle sign-up error
-                print("Error creating user: \(error.localizedDescription)")
+                self.errorMessageLabel.text = "Error: \(error.localizedDescription)"
                 return
             }
             
@@ -43,7 +44,7 @@ class SignUpViewController: UIViewController {
             
             // Create a User object with the necessary data
             let movieList: [MovieListItem] = [] // Initialize with default or empty movie list
-            let userData = User(username: username, userImage: "", movieList: movieList)
+            let userData = User(username: username, movieList: movieList)
             
             // Save user data to Realtime Database
             self.saveUserDataToDatabase(userID: user.uid, userData: userData)
@@ -63,13 +64,22 @@ class SignUpViewController: UIViewController {
                         print("Error saving user data: \(error.localizedDescription)")
                     } else {
                         // Data saved successfully, navigate to the next screen
-                        self.performSegue(withIdentifier: self.signUpId, sender: self)
+                        self.presentMainAppViewController()
                     }
                 }
             } catch {
                 print("Error encoding user data: \(error.localizedDescription)")
             }
         }
+    
+    private func presentMainAppViewController() {
+        let mainAppStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainAppViewController = mainAppStoryboard.instantiateViewController(withIdentifier: "search") as? SearchViewController {
+            mainAppViewController.modalPresentationStyle = .fullScreen
+            
+            self.present(mainAppViewController, animated: true)
+        }
+    }
 
     }
     

@@ -37,7 +37,6 @@ class DataManager{
     }
     
     private init() {
-        loadUserData()
     }
     
     func loadUserData() {
@@ -108,7 +107,10 @@ class DataManager{
         }
     }
 
-
+    func updateMovieList(movieList: [MovieListItem]){
+        currentUser?.movieList = movieList
+        updateUserDataInDatabase()
+    }
     
     func searchMoviesByTitle(title: String, completion: @escaping ([Movie]) -> Void){
         let searchMovieURL = MOVIES_API_URL + "/\(title)"

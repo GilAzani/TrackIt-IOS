@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC0B6BE12C77A3E20041B910 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0B6BE02C77A3E20041B910 /* SignInViewController.swift */; };
 		FC1C0C8A2C70DA980091BC59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1C0C892C70DA980091BC59 /* AppDelegate.swift */; };
 		FC1C0C8C2C70DA980091BC59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1C0C8B2C70DA980091BC59 /* SceneDelegate.swift */; };
 		FC1C0C8E2C70DA980091BC59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1C0C8D2C70DA980091BC59 /* ViewController.swift */; };
@@ -29,11 +28,12 @@
 		FCA300BD2C7218550042CC69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BC2C7218550042CC69 /* User.swift */; };
 		FCA300BF2C7218B30042CC69 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA300BE2C7218B30042CC69 /* MovieListItem.swift */; };
 		FCABE3592C74BFCB00F94DB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */; };
+		FCF319552C7A117D00A792FB /* SignInViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF319542C7A117D00A792FB /* SignInViewControlller.swift */; };
+		FCF319572C7A1A2800A792FB /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCF319562C7A1A2800A792FB /* Config.plist */; };
 		FCF5E8362C78A983009F65D4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5E8352C78A983009F65D4 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC0B6BE02C77A3E20041B910 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FC1C0C862C70DA980091BC59 /* TrackIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1C0C892C70DA980091BC59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC1C0C8B2C70DA980091BC59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		FCA300BC2C7218550042CC69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCA300BE2C7218B30042CC69 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
 		FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FCF319542C7A117D00A792FB /* SignInViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControlller.swift; sourceTree = "<group>"; };
+		FCF319562C7A1A2800A792FB /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		FCF5E8352C78A983009F65D4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +111,9 @@
 				FCABE3582C74BFCB00F94DB7 /* SearchViewController.swift */,
 				FC7E74102C74DA35006BAD63 /* DetailedMovieViewController.swift */,
 				FC8E218D2C74EDB600B8F484 /* DataManager.swift */,
-				FC0B6BE02C77A3E20041B910 /* SignInViewController.swift */,
 				FCF5E8352C78A983009F65D4 /* SignUpViewController.swift */,
+				FCF319542C7A117D00A792FB /* SignInViewControlller.swift */,
+				FCF319562C7A1A2800A792FB /* Config.plist */,
 			);
 			path = TrackIt;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				FC1C0C962C70DA990091BC59 /* LaunchScreen.storyboard in Resources */,
 				FC2BFDC12C77875B00834D4C /* GoogleService-Info.plist in Resources */,
 				FC1C0C932C70DA990091BC59 /* Assets.xcassets in Resources */,
+				FCF319572C7A1A2800A792FB /* Config.plist in Resources */,
 				FC1C0C912C70DA980091BC59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC0B6BE12C77A3E20041B910 /* SignInViewController.swift in Sources */,
 				FC1C0C8E2C70DA980091BC59 /* ViewController.swift in Sources */,
 				FC7E74112C74DA35006BAD63 /* DetailedMovieViewController.swift in Sources */,
 				FCABE3592C74BFCB00F94DB7 /* SearchViewController.swift in Sources */,
@@ -219,6 +222,7 @@
 				FC1C0C8C2C70DA980091BC59 /* SceneDelegate.swift in Sources */,
 				FC8E218E2C74EDB600B8F484 /* DataManager.swift in Sources */,
 				FCA300BD2C7218550042CC69 /* User.swift in Sources */,
+				FCF319552C7A117D00A792FB /* SignInViewControlller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

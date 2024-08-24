@@ -4,11 +4,11 @@ class Movie: Codable {
     var id: Int
     var title: String
     var releaseDate: String // Now has a default value
-    var overview: String
+    var overview: String // now has a default value
     var imageURL: String // Now has a default value
     var runtime: Int // Duration in minutes
     
-    init(id: Int, title: String, releaseDate: String = "", overview: String, imageURL: String = "", runtime: Int) {
+    init(id: Int, title: String, releaseDate: String = "", overview: String = "", imageURL: String = "", runtime: Int) {
         self.id = id
         self.title = title
         self.releaseDate = releaseDate
@@ -16,6 +16,7 @@ class Movie: Codable {
         self.imageURL = imageURL
         self.runtime = runtime
     }
+    
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -32,7 +33,7 @@ class Movie: Codable {
         id = try container.decode(Int.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
         releaseDate = try container.decodeIfPresent(String.self, forKey: .releaseDate) ?? ""
-        overview = try container.decode(String.self, forKey: .overview)
+        overview = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
         imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL) ?? ""
         runtime = try container.decode(Int.self, forKey: .runtime)
     }

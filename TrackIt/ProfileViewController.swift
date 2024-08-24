@@ -6,9 +6,10 @@
 //
 import UIKit
 import AlamofireImage
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var logoutImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var favoriteMoviesTableView: UITableView!
@@ -30,6 +31,39 @@ class ProfileViewController: UIViewController {
         loadUI()
         
         connectFavoriteMovieList()
+        
+        setUpLogoutButton()
+
+    }
+    
+    func setUpLogoutButton(){
+        let logoutTapped = UITapGestureRecognizer(target: self, action: #selector(logout(_:)))
+        logoutImageView.addGestureRecognizer(logoutTapped)
+    }
+    
+    @objc func logout(_ sender: UITapGestureRecognizer){
+        do {
+            try Auth.auth().signOut()
+            // Handle successful sign-out
+            print("User successfully signed out.")
+            
+            // Optionally, navigate to the login screen or another screen
+            navigateToLoginScreen()
+        } catch let signOutError as NSError {
+            // Handle sign-out error
+            print("Error signing out: %@", signOutError.localizedDescription)
+        }
+    }
+    
+    func navigateToLoginScreen(){
+        let mainAppStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainAppViewController = mainAppStoryboard.instantiateViewController(withIdentifier: "sign_in") as? SignInViewController {
+            // Replace the root view controller with the main app view controller
+            if let window = UIApplication.shared.windows.first {
+                window.rootViewController = mainAppViewController
+                window.makeKeyAndVisible()
+            }
+        }
     }
     
     func connectFavoriteMovieList(){
@@ -39,11 +73,10 @@ class ProfileViewController: UIViewController {
     }
     
     func loadUI(){
-        let imageURL = URL(string: userData.userImage)!
-        // add a placeholder image later
-        userImageView.af.setImage(withURL: imageURL)
+//        let imageURL = URL(string: userData.userImage.isEmpty ? "https://" : userData.userImage)!
+//        userImageView.af.setImage(withURL: imageURL)
         usernameLabel.text = userData.username
-
+        
         refreshMovieCount()
     }
     

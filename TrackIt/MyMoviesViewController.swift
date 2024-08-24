@@ -116,6 +116,7 @@ extension MyMoviesViewController: UITableViewDataSource {
         // Update movieList
         if let indexInMovieList = movieList.firstIndex(where: { $0.movie.id == movieItem.movie.id }) {
             movieList[indexInMovieList] = updatedMovieItem
+            DataManager.instance.updateMovieList(movieList: movieList)
         }
                 
         // Update displayList
