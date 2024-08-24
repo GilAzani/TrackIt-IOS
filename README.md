@@ -37,7 +37,7 @@ To configure the app, you need to create a Config.plist file in the project dire
 Open your project in Xcode.
 Go to File > Add Packages
 
-Search for and add all of the required packages - AlamofireImage, Firebase.
+Search for and add all of the required packages - Alamofire, AlamofireImage, Firebase.
 
 Follow the prompts to integrate the packages into your project.
 
