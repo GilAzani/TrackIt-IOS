@@ -63,8 +63,9 @@ class SignUpViewController: UIViewController {
                     if let error = error {
                         print("Error saving user data: \(error.localizedDescription)")
                     } else {
+                        DataManager.instance.loadUserData()
                         // Data saved successfully, navigate to the next screen
-                        self.presentMainAppViewController()
+                        self.transitionToMainTabBarController()
                     }
                 }
             } catch {
@@ -72,12 +73,14 @@ class SignUpViewController: UIViewController {
             }
         }
     
-    private func presentMainAppViewController() {
-        let mainAppStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if let mainAppViewController = mainAppStoryboard.instantiateViewController(withIdentifier: "search") as? SearchViewController {
-            mainAppViewController.modalPresentationStyle = .fullScreen
-            
-            self.present(mainAppViewController, animated: true)
+    private func transitionToMainTabBarController() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "main_page") as? UITabBarController {
+            // Set the tab bar controller as the root view controller
+            if let window = UIApplication.shared.windows.first {
+                window.rootViewController = tabBarController
+                window.makeKeyAndVisible()
+            }
         }
     }
 
