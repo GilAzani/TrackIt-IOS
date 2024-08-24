@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController {
     
     func refreshMovieCount(){
         
-        let movieCount = userData.movieList.count
+        let movieCount = userData.movieList?.count ?? 0
         if movieCount == 1{
             numberOfMoviesLabel.text = "1 movie"
         }else{
@@ -58,8 +58,8 @@ class ProfileViewController: UIViewController {
     }
     
     func refreshMovieLabel(){
-        let favoriteMovies = userData.movieList.filter {$0.isLiked}
-        if favoriteMovies.isEmpty{
+        let favoriteMovies = userData.movieList?.filter {$0.isLiked}
+        if ((favoriteMovies?.isEmpty) != nil){
             favoriteMoviesLabel.text = ""
         }else{
             favoriteMoviesLabel.text = movieListLabel
@@ -68,7 +68,7 @@ class ProfileViewController: UIViewController {
 
     func loadUserData(){
         // later getting the data from datamanager
-        self.userData = User(username: "gil", userImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWo3luud5KPZknLR5zdUUwzvYBztWgTxrkbA&s", movieList:DataManager.instance.movieList )
+        self.userData = DataManager.instance.currentUser
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,8 +88,8 @@ extension ProfileViewController: UITableViewDelegate{
 
 extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let favoriteMovies = userData.movieList.filter {$0.isLiked}
-        return favoriteMovies.count
+        let favoriteMovies = userData.movieList?.filter {$0.isLiked}
+        return favoriteMovies?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -99,8 +99,8 @@ extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: SimpleMovieCell? = favoriteMoviesTableView.dequeueReusableCell(withIdentifier: movieCellId) as! SimpleMovieCell
 
-        let favoriteMovies = userData.movieList.filter {$0.isLiked}
-        let movie: Movie = favoriteMovies[indexPath.row].movie
+        let favoriteMovies = userData.movieList?.filter {$0.isLiked}
+        let movie: Movie = (favoriteMovies?[indexPath.row].movie)!
 
         let imageURL = URL(string: movie.imageURL.isEmpty ? "https://" : movie.imageURL)!
 

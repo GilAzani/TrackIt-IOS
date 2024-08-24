@@ -14,6 +14,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var userEmailTextField: UITextField!
     
     @IBOutlet weak var userPasswordTextField: UITextField!
+    let signInId = "sign_in"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,10 +33,18 @@ class SignInViewController: UIViewController {
                 print("Error signing in: \(error.localizedDescription)")
                 return
             }
-            
-            print("nice!")
-            // Sign-in successful, navigate to the next screen
-//            self.performSegue(withIdentifier: "signInToHome", sender: self)
+            self.dismiss(animated: true){
+                self.performSegue(withIdentifier: self.signInId, sender: self)
+            }
         }
     }
+    
+
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == self.signInId {
+//            self.dismiss(animated: false)
+//        }
+//    }
+
 }

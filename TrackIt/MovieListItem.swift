@@ -7,12 +7,18 @@
 
 import Foundation
 
-class MovieListItem{
+class MovieListItem: Codable{
     var movie: Movie
     var isLiked: Bool = false
     
     init(movie: Movie, isLiked: Bool) {
         self.movie = movie
         self.isLiked = isLiked
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case movie
+        case isLiked
+
     }
 }
